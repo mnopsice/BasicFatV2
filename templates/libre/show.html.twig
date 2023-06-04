@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title>Libre</title>
+
+{% block body %}
+    <h1>Libre</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ libre.id }}</td>
+            </tr>
+            <tr>
+                <th>Date_seance</th>
+                <td>{{ libre.dateSeance ? libre.dateSeance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heure_debut</th>
+                <td>{{ libre.heureDebut ? libre.heureDebut|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Heure_fin</th>
+                <td>{{ libre.heureFin ? libre.heureFin|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nb_activite</th>
+                <td>{{ libre.nbActivite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_libre_index') }}">back to list</a>
+
+    <a href="{{ path('app_libre_edit', {'id': libre.id}) }}">edit</a>
+
+    {{ include('libre/_delete_form.html.twig') }}
+{% endblock %}

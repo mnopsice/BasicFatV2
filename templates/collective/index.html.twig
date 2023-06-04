@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<title>Collective index</title>
+
+{% block body %}
+    <h1>Collective index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_seance</th>
+                <th>Heure_debut</th>
+                <th>Heure_fin</th>
+                <th>Nb_places</th>
+                <th>Nb_personnes</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for collective in collectives %}
+            <tr>
+                <td>{{ collective.id }}</td>
+                <td>{{ collective.dateSeance ? collective.dateSeance|date('Y-m-d') : '' }}</td>
+                <td>{{ collective.heureDebut ? collective.heureDebut|date('H:i:s') : '' }}</td>
+                <td>{{ collective.heureFin ? collective.heureFin|date('H:i:s') : '' }}</td>
+                <td>{{ collective.nbPlaces }}</td>
+                <td>{{ collective.nbPersonnes }}</td>
+                <td>
+                    <a href="{{ path('app_collective_show', {'id': collective.id}) }}">show</a>
+                    <a href="{{ path('app_collective_edit', {'id': collective.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_collective_new') }}">Create new</a>
+{% endblock %}

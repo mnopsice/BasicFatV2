@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<title>Adherents</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+{% block body %}
+    <h1>Adherents</h1>
+    <!-- ------------------------- -->
+    <body>
+    <table class="table" style="height:100vh">
+        <thead>
+        <tr>
+            <th>Semaine</th>
+            <th scope="col">7:00-8:00</th>
+            <th scope="col">8:00-9:00</th>
+            <th scope="col">9:00-10:00</th>
+            <th scope="col">10:00-11:00</th>
+            <th scope="col">11:00-12:00</th>
+            <th scope="col">13:00-14:00</th>
+            <th scope="col">14:00-15:00</th>
+            <th scope="col">15:00-16:00</th>
+            <th scope="col">16:00-17:00</th>
+            <th scope="col">17:00-18:00</th>
+        <tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th class="align-middle" scope="row">Lundi</th>
+
+            <td><div class="h-100 text-center list-group-item bg-primary">Abdos Fessiers</div></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th class="align-middle" scope="row">Mardi</th>
+            <td><div class="h-100 list-group-item bg-danger">Tapis de course</div></td>
+            <td></td>
+            <td></td>
+            <td><div class="h-100 list-group-item bg-warning">Biceps</div></td>
+
+
+        </tr>
+        <tr>
+            <th class="align-middle" scope="row">Mercredi</th>
+        </tr>
+        <tr>
+            <th class="align-middle" scope="row">Jeudi</th>
+            <td><div class="h-100 list-group-item bg-info">Cours collectif</div></td>
+        </tr>
+        <tr>
+            <th class="align-middle" scope="row">Vendredi</th>
+        </tr>
+        </tbody>
+    </table>
+
+
+    </ul>
+
+    </body>
+    <!-- ------------------------- -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ adherent.id }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ adherent.mail }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ adherent.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ adherent.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ adherent.mdp }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+    <a href="{{ path('app_adherents_index') }}">back to list</a>
+
+    <a href="{{ path('app_adherents_edit', {'id': adherent.id}) }}">edit</a>
+
+    {{ include('adherents/_delete_form.html.twig') }}
+{% endblock %}

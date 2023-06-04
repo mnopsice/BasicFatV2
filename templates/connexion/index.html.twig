@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+
+{% block body %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulaire de connexion</title>
+    </head>
+    <body>
+
+    <div class="header">
+        <img class="logo" src={{asset('img/BasicFat.png') }} >
+    </div>
+    <div class="container">
+        <form>
+            <p>Bienvenue sur Basic-Fat</p>
+            <input type="email" placeholder="Nom d'utilisateur"><br>
+            <input type="password" placeholder="Mot de passe"><br>
+            <a href="Accueil.html"><input type="button" value="Connexion"></a><br>
+            <a href="../loader-animation/dist/index.html">Mot de passe oublié</a>
+        </form>
+
+
+    </div>
+    </body>
+    </html>
+{% endblock %}

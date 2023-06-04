@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<title>FicheSan index</title>
+
+{% block body %}
+    <h1>FicheSan index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Poids</th>
+                <th>Taille</th>
+                <th>Histo_sante</th>
+                <th>Histo_seance</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fiche_san in fiche_sans %}
+            <tr>
+                <td>{{ fiche_san.id }}</td>
+                <td>{{ fiche_san.poids }}</td>
+                <td>{{ fiche_san.taille }}</td>
+                <td>{{ fiche_san.histoSante }}</td>
+                <td>{{ fiche_san.histoSeance }}</td>
+                <td>
+                    <a href="{{ path('app_fiche_san_show', {'id': fiche_san.id}) }}">show</a>
+                    <a href="{{ path('app_fiche_san_edit', {'id': fiche_san.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_fiche_san_new') }}">Create new</a>
+{% endblock %}

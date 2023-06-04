@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<title>Coachs</title>
+
+{% block body %}
+    <h1>Coachs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ coach.id }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ coach.mail }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ coach.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ coach.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ coach.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ coach.specialite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coachs_index') }}">back to list</a>
+
+    <a href="{{ path('app_coachs_edit', {'id': coach.id}) }}">edit</a>
+
+    {{ include('coachs/_delete_form.html.twig') }}
+{% endblock %}

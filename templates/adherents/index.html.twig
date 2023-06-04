@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ asset('css/adherents.css') }}">
+<link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+
+
+<title>Adherents index</title>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page d'accueil adherent</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0ff3ab6b3d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="header">
+    <img class="logo" src={{asset('img/BasicFat.png') }} >
+</div>
+
+<!-- ---------------------------------------->
+
+<header>
+    <nav class="flex aic p-20">
+        <ul class="unlisted flex">
+            <a href="#" class="p-20 block burger-icon"></a>
+            <li><a class="white link purple-btn transform" href="#">Inscription</a></li>
+        </ul>
+    </nav>
+    <section class="flex column aic relative white">
+        <h1 class="m-15 uppercase">Basic - FAT</h1>
+        <p>- Le Fitness pour les Loic -</p>
+    </section>
+</header>
+
+<main>
+    <section id="cards" class="flex center-items">
+        <article class="card flex flex-1 column aic jcc relative transform white">
+            <a href="show.html.twig" ><h3 class="uppercase">Voir mon emploi du temps </h3></a>
+        </article>
+        <article class="card flex flex-1 column aic jcc relative transform white">
+            <a href="../fiche_san/show.html.twig" ><h3 class="uppercase">Voir ma fiche santé</h3></a>
+        </article>
+    </section>
+
+
+
+</main>
+
+<footer id="footer" class="flex ">
+
+    <section id="left-section" class="white">
+        <a href="#">
+        </a>
+
+        <section id="network" class="flex ">
+            <i class="fab fa-facebook-f m-5"></i>
+            <i class="fa-brands fa-instagram m-5"></i>
+            <i class="fa-brands fa-twitter m-5"></i>
+        </section>
+    </section>
+
+    <form class="tac ">
+        <h2>Nous contacter</h2>
+        <p>Remplir le formulaire avec votre question / demande</p>
+
+        <input type="text" id="name" name="user_name" placeholder="Nom">
+        <br>
+        <input type="email" id="email" name="user_mail" placeholder="Mail">
+        <input type="submit" class="block purple-btn white">
+
+
+    </form>
+
+    <section id="right-section" class="flex column white">
+
+        <section class="flex">
+            <div class="icones">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <article>
+                <h4>Adresse</h4>
+                <p>13 Rue du Gras<br>86000 Poitiers</p>
+            </article>
+        </section>
+
+        <section class="flex">
+
+            <i class="fa-solid fa-phone"></i>
+            <article>
+                <h4>Téléphone</h4>
+                <p><a class="white" href="tel:+330122334455"> 06 98 00 56 67</a></p>
+            </article>
+        </section>
+
+        <section class="flex">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <article>
+                <h4>Email</h4>
+                <p><a class="white" href="mailto:totolasalle@yahoo.fr">basic-fat@contact.fr</a></p>
+            </article>
+        </section>
+
+
+    </section>
+
+
+</footer>
+
+<!----------------------------------------- -->
+
+
+
+
+
+</body>
+
+{% block body %}
+    <h1>Adherents</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mail</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Mdp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adherent in adherents %}
+            <tr>
+                <td>{{ adherent.id }}</td>
+                <td>{{ adherent.mail }}</td>
+                <td>{{ adherent.nom }}</td>
+                <td>{{ adherent.prenom }}</td>
+                <td>{{ adherent.mdp }}</td>
+                <td>
+                    <a href="{{ path('app_adherents_show', {'id': adherent.id}) }}">show</a>
+                    <a href="{{ path('app_adherents_edit', {'id': adherent.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn1" href="{{ path('app_adherents_new') }}">Create new</a>
+{% endblock %}

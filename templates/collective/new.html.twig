@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<title>New Collective</title>
+
+{% block body %}
+    <h1>Create new Collective</h1>
+
+    {{ include('collective/_form.html.twig') }}
+
+    <a href="{{ path('app_collective_index') }}">back to list</a>
+{% endblock %}

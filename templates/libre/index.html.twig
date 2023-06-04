@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<title>Libre index</title>
+
+{% block body %}
+    <h1>Libre index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date_seance</th>
+                <th>Heure_debut</th>
+                <th>Heure_fin</th>
+                <th>Nb_activite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for libre in libres %}
+            <tr>
+                <td>{{ libre.id }}</td>
+                <td>{{ libre.dateSeance ? libre.dateSeance|date('Y-m-d') : '' }}</td>
+                <td>{{ libre.heureDebut ? libre.heureDebut|date('H:i:s') : '' }}</td>
+                <td>{{ libre.heureFin ? libre.heureFin|date('H:i:s') : '' }}</td>
+                <td>{{ libre.nbActivite }}</td>
+                <td>
+                    <a href="{{ path('app_libre_show', {'id': libre.id}) }}">show</a>
+                    <a href="{{ path('app_libre_edit', {'id': libre.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_libre_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,301 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.center-items{
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-5 {
+    flex: 5;
+}
+
+.column{
+    flex-direction : column;
+}
+
+.jcc, .flex-center-h{
+    justify-content: center;
+}
+
+.aic, .flex-center-v{
+    align-items: center;
+}
+
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.sticky{
+    position: sticky;
+}
+.fixed{
+    position: fixed;
+}
+
+.none{
+    display: none;
+}
+.block{
+    display: block;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.tac{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.m-5{
+    margin: 5px;
+}
+.m-10{
+    margin: 10px;
+}
+.m-15{
+    margin: 15px;
+}
+.m-20{
+    margin: 20px;
+}
+.m-25{
+    margin: 25px;
+}
+
+
+.p-5{
+    padding: 5px;
+}
+.p-10{
+    padding: 10px;
+}
+.p-15{
+    padding: 15px;
+}
+.p-20{
+    padding: 20px;
+}
+.p-25{
+    padding: 25px;
+}
+
+
+.dropdown::after{
+    content: "\1f893";
+    padding-left: 2px;
+    position: relative;
+    top: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.purple-btn {
+    background-color: rgb(124, 40, 99);
+    padding: 1rem;
+}
+
+.img {
+    width: 50px;
+}
+
+.white {
+    color: white;
+}
+
+.transform:hover {
+    transform: scale(110%);
+    transition: 0.5s;
+}
+
+header {
+    background: linear-gradient(to right, rgba(124, 40, 99, 0.3), rgba(255, 255, 255, 0.3)), url("https://i.imgur.com/rHjQvn1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 70vh;
+}
+
+nav {
+    justify-content: space-between;
+}
+
+header nav ul {
+    width: 30%;
+    justify-content: space-between;
+}
+
+header nav ul .burger-icon {
+    display: none;
+    position: absolute;
+    color: white;
+    top: -5px;
+    right: 10px;
+    font-size: 3rem;
+}
+
+header nav ul li:nth-child(3)>a,
+header nav ul li a {
+    padding: 0.5rem;
+}
+
+.logo {
+    width: 80px;
+}
+
+div.logo img {
+    width: 100%;
+}
+
+header section {
+    top: 3rem;
+}
+
+header h1 {
+    font-size: 6rem;
+}
+
+#cards {
+    width: 50%;
+    height: 35vh;
+}
+
+#cards article {
+    top: -7rem;
+}
+
+.transform:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#cards article {
+    line-height: 2;
+}
+
+#cards article:first-of-type {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url("https://i.imgur.com/DZf0cst.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#cards article:last-child {
+    background-image: linear-gradient(to top, rgba(124, 40, 99, 0.7), rgba(124, 40, 99, 0.2)), url("https://i.imgur.com/E4fdo5Z.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#footer {
+    background-color: black;
+    border-top: 10px solid rgb(124, 40, 99);
+    padding-top: 1rem;
+}
+
+#left-section,
+#right-section {
+    width: calc(75%/2);
+}
+
+#left-section {
+    text-align: end;
+    margin-right: 2rem;
+}
+
+#left-section #network {
+    margin-top: 2rem;
+    justify-content: flex-end;
+}
+
+#left-section p {
+    margin: 2rem 0;
+}
+
+form {
+    width: 25%;
+    justify-content: space-between;
+    background: white;
+    height: 30rem;
+    margin-top: -6rem;
+    padding: 3rem;
+}
+
+form h2,
+form p {
+    margin-bottom: 2.5rem;
+}
+
+form input:not([type=submit]) {
+    width: 90%;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+form input[type=submit] {
+    margin: 0 auto;
+}
+
+form a {
+    color: white;
+    text-decoration: none;
+}
+
+#right-section section i {
+    margin: 0 2rem;
+    color: rgb(124, 40, 99);
+}
+
+#right-section section:nth-child(2) {
+    margin: 1.1rem 0;
+}
+.tac h2{
+    text-decoration: underline;
+}
+
+
+
+

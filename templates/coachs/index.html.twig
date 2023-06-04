@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<title>Coachs index</title>
+
+{% block body %}
+    <h1>Coachs index</h1>
+    <a class="nav-link" href="{{ path('registration') }}">Register</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mail</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Mdp</th>
+                <th>Specialite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coach in coachs %}
+            <tr>
+                <td>{{ coach.id }}</td>
+                <td>{{ coach.mail }}</td>
+                <td>{{ coach.nom }}</td>
+                <td>{{ coach.prenom }}</td>
+                <td>{{ coach.mdp }}</td>
+                <td>{{ coach.specialite }}</td>
+                <td>
+                    <a href="{{ path('app_coachs_show', {'id': coach.id}) }}">show</a>
+                    <a href="{{ path('app_coachs_edit', {'id': coach.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_coachs_new') }}">Create new</a>
+{% endblock %}

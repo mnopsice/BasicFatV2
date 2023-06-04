@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<title>FicheSan</title>
+
+{% block body %}
+    <h1>FicheSan</h1>
+    <!-- ------------------------- -->
+    <div class="container">
+        <div class="menu-column">
+        </div>
+        <div class="summary-column">
+            <div class="profile-img" id="profileImage"><img src="id.jpeg"/>
+                <div class="name">Rick <br> Bouyaghi</div>
+            </div>
+
+            <div class="statistics">
+                <h2>Caractéristiques</h2>
+                <div class="age"><span class="title title-age">22</span></div>
+                <div class="weight"><span class="title title-weight">53kg</span></div>
+                <div class="float-none"></div>
+                <div class="height">
+                    <div class="icon"></div>
+                    <div class="data"><span>172 cm</span></div>
+                </div>
+                <div class="bmi"><span class="title title-bmi">20.4</span></div>
+                <div class="fat"><span class="title title-fat">11<span class="percentage">%</span></span></div>
+                <div class="float-none"></div>
+                <h2 class="allergies">Allergies</h2>
+                <div class="row">Chocolat
+                    <div class="severity">
+                        <div class="fill" style="width: 45%; height: inherit;"></div>
+                    </div>
+                </div>
+                <div class="row">Lactose
+                    <div class="severity">
+                        <div class="fill" style="width: 80%; height: inherit;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-column">
+            <div class="header-container" id="headerContainer">
+                <div class="nav">
+                    <div class="content">
+                        <p>
+                            Bienvenue <span class="name">Rick </span>, voici votre fiche </p><span class="shape score">Santé</span></span>
+                    </div>
+                </div>
+
+
+                <div class="float-none"></div>
+                <div class="graph">
+                    <canvas id="bpChart" style="position: relative; z-index: 100;"></canvas>
+                </div>
+
+            </div>
+
+            <div class="split-container">
+
+                <div class="split">
+                    <h3>Temperature</h3>
+                    <div class="temperature">36.7</div>
+                    <div class="split-graph">
+                        <canvas id="temperatureGraph"></canvas>
+                    </div>
+                </div>
+
+                <div class="split">
+                    <h3>Calories burned</h3>
+                    <div class="calories">537</div>
+                    <div class="split-graph">
+                        <canvas id="calorieGraph"></canvas>
+                    </div>
+                </div>
+
+                <div class="split">
+                    <h3>Heart rate</h3>
+                    <div class="heart-rate">87</div>
+                    <div class="split-graph">
+                        <canvas id="heartRateGraph"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- ------------------------- -->
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fiche_san.id }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ fiche_san.poids }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ fiche_san.taille }}</td>
+            </tr>
+            <tr>
+                <th>Histo_sante</th>
+                <td>{{ fiche_san.histoSante }}</td>
+            </tr>
+            <tr>
+                <th>Histo_seance</th>
+                <td>{{ fiche_san.histoSeance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_fiche_san_index') }}">back to list</a>
+
+    <a href="{{ path('app_fiche_san_edit', {'id': fiche_san.id}) }}">edit</a>
+
+    {{ include('fiche_san/_delete_form.html.twig') }}
+{% endblock %}
